@@ -7,7 +7,7 @@ const spans = [2, 1, 1, 1, 1, 1, 1, 1, 2, 1]
 
 const Skills = () => {
   return (
-    <section className="min-h-screen py-24 px-4 mt-10" aria-label="Skills section">
+    <section id="skills" className="min-h-screen py-24 px-4 mt-10" aria-label="Skills section">
       <SectionHeading title="Skills" subtitle="Technologies and tools I work with" />
 
       <div className="max-w-6xl mx-auto">

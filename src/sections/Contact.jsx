@@ -5,7 +5,7 @@ import SectionHeading from '../components/SectionHeading'
 
 const Contact = () => {
   return (
-    <section className="min-h-screen py-24 px-4 mt-10" aria-label="Contact section">
+    <section id="contact" className="min-h-screen py-24 px-4 mt-10" aria-label="Contact section">
       <SectionHeading title="Contact" subtitle="Get in touch — I'd love to hear from you" />
 
       <div className="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">

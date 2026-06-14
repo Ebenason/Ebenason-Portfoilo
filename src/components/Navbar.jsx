@@ -1,30 +1,30 @@
 import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
 import { HiMenu, HiX } from 'react-icons/hi'
+import { NAV_LINKS } from '../constants'
 
-const hover_style = `cursor-pointer text-lg text-gray-300 font-thin px-7 py-1 hover:text-lg hover:mx-3 hover:bg-gray-100/10 border border-gray-600/0 hover:border-gray-100/10 hover:px-3 rounded-3xl transition  transition-all hover:scale-130 duration-300 ease-in-out  hover:shadow-lg `
+const hover_style = 'cursor-pointer text-lg text-gray-300 font-thin px-7 py-1 hover:bg-gray-100/10 border border-gray-600/0 hover:border-gray-100/10 hover:px-3 rounded-3xl transition-all duration-300 ease-in-out hover:scale-[1.15] hover:shadow-lg'
 
-const Navbar = () => {
-  const { pathname } = useLocation()
+const Navbar = ({ activeSection }) => {
   const [open, setOpen] = useState(false)
 
-  const linkClass = (path) =>
-    `${hover_style} ${pathname === path ? '!bg-gray-50/10 !px-3 !mx-2 !text-white !scale-110' : ''}`
+  const linkClass = (href) =>
+    `${hover_style} ${activeSection === href.slice(1) ? '!bg-gray-50/10 !px-3 !mx-2 !text-white !scale-[1.15]' : ''}`
 
-  const links = [
-    { to: '/', label: 'Home' },
-    { to: '/skills', label: 'Skills' },
-    { to: '/projects', label: 'Projects' },
-    { to: '/experience', label: 'Experience' },
-    { to: '/contact', label: 'Contact' },
-  ]
+  const handleNavClick = (e, href) => {
+    e.preventDefault()
+    setOpen(false)
+    const target = document.querySelector(href)
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
 
   return (
     <>
-      <div className="navBar fixed top-4 left-1/2 -translate-x-1/2 z-50 hidden lg:flex justify-center items-center p-2 transition transition-transform ease-in-out duration-300 hover:scale-110">
+      <div className="navBar fixed top-4 left-1/2 -translate-x-1/2 z-50 hidden lg:flex justify-center items-center p-2 transition-transform duration-300 ease-in-out hover:scale-105">
         <div className="linksContainer bg-gray-100/10 backdrop-blur-lg rounded-4xl shadow-xl border border-gray-100/10 p-4 px-10 relative flex flex-row gap-1">
-          {links.map(({ to, label }) => (
-            <Link key={to} to={to} className={linkClass(to)}>{label}</Link>
+          {NAV_LINKS.map(({ label, href }) => (
+            <a key={href} href={href} onClick={(e) => handleNavClick(e, href)} className={linkClass(href)}>{label}</a>
           ))}
         </div>
       </div>
@@ -45,19 +45,19 @@ const Navbar = () => {
           <div className="absolute top-20 right-4 bg-gray-900/90 backdrop-blur-xl rounded-2xl shadow-xl border border-gray-100/10 p-4 flex flex-col gap-1 min-w-[200px]"
             onClick={(e) => e.stopPropagation()}
           >
-            {links.map(({ to, label }) => (
-              <Link
-                key={to}
-                to={to}
-                onClick={() => setOpen(false)}
+            {NAV_LINKS.map(({ label, href }) => (
+              <a
+                key={href}
+                href={href}
+                onClick={(e) => handleNavClick(e, href)}
                 className={`cursor-pointer text-lg text-gray-300 font-thin px-5 py-2 rounded-2xl transition-all duration-300 ease-in-out ${
-                  pathname === to
+                  activeSection === href.slice(1)
                     ? 'bg-gray-50/10 text-white'
                     : 'hover:bg-gray-100/10'
                 }`}
               >
                 {label}
-              </Link>
+              </a>
             ))}
           </div>
         </div>

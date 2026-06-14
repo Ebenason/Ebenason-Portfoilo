@@ -4,7 +4,7 @@ import { EXPERIENCES } from '../constants'
 
 const Experience = () => {
   return (
-    <section className="min-h-screen py-24 px-4 mt-10" aria-label="Experience section">
+    <section id="experience" className="min-h-screen py-24 px-4 mt-10" aria-label="Experience section">
       <SectionHeading title="Experience" subtitle="My professional journey" />
 
       <div className="max-w-6xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

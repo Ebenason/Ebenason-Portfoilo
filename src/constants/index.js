@@ -7,11 +7,11 @@ import {
 } from 'react-icons/si'
 
 export const NAV_LINKS = [
-  { label: 'Home', path: '/' },
-  { label: 'Skills', path: '/skills' },
-  { label: 'Projects', path: '/projects' },
-  { label: 'Experience', path: '/experience' },
-  { label: 'Contact', path: '/contact' },
+  { label: 'Home', href: '#home' },
+  { label: 'Skills', href: '#skills' },
+  { label: 'Projects', href: '#projects' },
+  { label: 'Experience', href: '#experience' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 export const TECH_LOGOS = [

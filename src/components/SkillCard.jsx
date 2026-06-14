@@ -16,7 +16,7 @@ const SkillCard = ({ skill, index }) => {
       role="article"
       aria-label={`Skill: ${skill.name}`}
     >
-      <div className={`${glassEffect} flex flex-col items-center gap-3 p-5 text-center transition transition-all duration-300 hover:bg-gray-400/10`}>
+      <div className={`${glassEffect} flex flex-col items-center gap-3 p-5 text-center transition-all duration-300 hover:bg-gray-400/10`}>
         <div
           className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0"
           style={{ backgroundColor: `${skill.color}15` }}
