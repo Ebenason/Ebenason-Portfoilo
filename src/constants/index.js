@@ -157,7 +157,7 @@ export const EXPERIENCES = [
     company: 'InferKNOW — SRM University Department Club',
     duration: 'Sep 2025 - May 2026',
     description: 'Led the Media Cell of the department club, managing event promotions, social media content, and visual communications. Coordinated with student teams to create promotional materials, increase engagement, and ensure effective coverage of departmental events.',
-    image: 'https://placehold.co/600x400/7C3AED/ffffff?text=Media+Cell',
+    image: 'https://placehold.co/600x400/7C3AED/ffffff?text=Head+of+Media+Cell',
   },
   {
     id: 3,
