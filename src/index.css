@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  --animate-float: float 12s ease-in infinite;
+  --animate-sway-left: swayLeft 6s ease-in-out infinite alternate;
+  --animate-sway-right: swayRight 6s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  to {
+    transform: translateY(-175vh);
+  }
+}
+
+@keyframes swayLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes swayRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes bgFloat {
+  from {
+    transform: translateY(0) translateX(0);
+  }
+  to {
+    transform: translateY(-30px) translateX(10px);
+  }
+}
+
+html {
+  background: black;
+}
+
+body {
+  background: transparent;
+}
+
+#root {
+  background: transparent;
+  scroll-behavior: smooth;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(234, 179, 8, 0.2) transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(234, 179, 8, 0.2);
+  border-radius: 3px;
+}
